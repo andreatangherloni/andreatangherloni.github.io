@@ -13,20 +13,6 @@ Research Interests
 ======
 My research activities focus on designing and developing novel methods and strategies to address real-world biomedical problems. I constantly work to effectively and efficiently combine Computational Intelligence (e.g., Evolutionary Computation, Swarm Intelligence, Fuzzy Logic) and Deep Learning models to tackle complex and/or intensive problems in Computational Biology, Bioinformatics, Computational Systems Biology, and other bio- and medical-based areas (e.g., Image analysis, Pattern Recognition).
 
-Education
-======
-PhD in Computer Science
-2015 - 2019
-Department of Informatics, Systems and Communication University of Milano-Bicocca
- 
-MSc in Computer Science
-2013 - 2015
-Department of Informatics, Systems and Communication University of Milano-Bicocca
- 
-BSc in Computer Science
-2010 - 2013
-Department of Informatics, Systems and Communication University of Milano-Bicocca
-
 About me
 ======
 I received my Bachelor’s and Master’s Degrees in Computer Science from the University of Milano-Bicocca (Milan, Italy) in 2013 and 2015, respectively. My Master’s thesis mainly focused on the simulation of large-scale biochemical models. I designed and developed a novel approach accelerated on Graphics Processing Units (GPUs). I obtained my PhD in Computer Science with a thesis on “High-Performance Computing to tackle complex problems in life sciences”, under the supervision of Prof. Daniela Besozzi and Prof. Paolo Cazzaniga, at the University of Milano-Bicocca (Milan, Italy) in February 2019. During my PhD program, I spent different months abroad as PhD visiting student at the Department of Cancer Biology (Vanderbilt University, Nashville, TN, USA) and the Computer Laboratory (University of Cambridge, Cambridge, UK). During my PhD, I mainly focused on using High-Performance Computing (HPC) platforms, especially GPUs, to tackle complex problems in life sciences. I also exploited Computational Intelligence meta-heuristics to deal with the intrinsic complexity of different well-known problems in life sciences (e.g., the Parameter Estimation in Systems Biology, Haplotype Assembly in Genome Analysis, enhancement and segmentation of bimodal Magnetic Resonance Images).
