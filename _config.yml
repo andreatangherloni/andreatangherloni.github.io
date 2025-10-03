@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Andrea Tangherloni"
+title                    : "Andrea Tangherloni, PhD"
 title_separator          : "-"
 name                     : &name "Andrea Tangherloni"
 description              : &description "personal description"
@@ -25,7 +25,7 @@ author:
   avatar           : "Tango_reduced.jpg"
   name             : "Andrea Tangherloni"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Assistant Professor in Computer Science"
   location         : "Milan"
   employer         : "Bocconi University"
   URI              :  "https://www.unibocconi.it/en"

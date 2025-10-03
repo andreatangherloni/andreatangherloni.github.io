@@ -1,15 +1,45 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+I am a highly motivated researcher who aims at integrating cutting-edge computational strategies to mainly address biomedical problems.
 
-A data-driven personal website
+Research Interests
+======
+My research activities focus on designing and developing novel methods and strategies to address real-world biomedical problems. I constantly work to effectively and efficiently combine Computational Intelligence (e.g., Evolutionary Computation, Swarm Intelligence, Fuzzy Logic) and Deep Learning models to tackle complex and/or intensive problems in Computational Biology, Bioinformatics, Computational Systems Biology, and other bio- and medical-based areas (e.g., Image analysis, Pattern Recognition).
+
+Education
+======
+PhD in Computer Science
+2015 - 2019
+Department of Informatics, Systems and Communication University of Milano-Bicocca
+ 
+MSc in Computer Science
+2013 - 2015
+Department of Informatics, Systems and Communication University of Milano-Bicocca
+ 
+BSc in Computer Science
+2010 - 2013
+Department of Informatics, Systems and Communication University of Milano-Bicocca
+
+About me
+======
+I received my Bachelor’s and Master’s Degrees in Computer Science from the University of Milano-Bicocca (Milan, Italy) in 2013 and 2015, respectively. My Master’s thesis mainly focused on the simulation of large-scale biochemical models. I designed and developed a novel approach accelerated on Graphics Processing Units (GPUs). I obtained my PhD in Computer Science with a thesis on “High-Performance Computing to tackle complex problems in life sciences”, under the supervision of Prof. Daniela Besozzi and Prof. Paolo Cazzaniga, at the University of Milano-Bicocca (Milan, Italy) in February 2019. During my PhD program, I spent different months abroad as PhD visiting student at the Department of Cancer Biology (Vanderbilt University, Nashville, TN, USA) and the Computer Laboratory (University of Cambridge, Cambridge, UK). During my PhD, I mainly focused on using High-Performance Computing (HPC) platforms, especially GPUs, to tackle complex problems in life sciences. I also exploited Computational Intelligence meta-heuristics to deal with the intrinsic complexity of different well-known problems in life sciences (e.g., the Parameter Estimation in Systems Biology, Haplotype Assembly in Genome Analysis, enhancement and segmentation of bimodal Magnetic Resonance Images).
+ 
+From November 2018 to November 2020, I was a Research Associate at the Department of Haematology of the University of Cambridge (Cambridge, UK) and Wellcome Trust – Medical Research Council Cambridge Stem Cell Institute (Cambridge, UK). In addition, I was a visiting worker at the Wellcome Trust Sanger Institute, Wellcome Trust Genome Campus (Hinxton, UK). During this period, I mainly worked on analyzing single-cell sequencing data by both proposing novel approaches and strategies to analyze these data, especially single-cell RNA data.
+​
+From December 2020 to November 2022, I was a Postdoctoral Researcher at the Department of Human and Social Sciences of the University of Bergamo (Bergamo, Italy). From December 2022 to August 2023, I was a Postdoctoral Research Fellow at the Bocconi Institute for Data Science and Analytics (BIDSA) and the Department of Computing Sciences of the Bocconi University (Milan, Italy). During this period, I mainly worked on designing AI-based approaches and tools to help increase our knowledge about the processes that drive both cell development and the progression of different pathologies.
+ 
+Since September 2023, I have been an Assistant Professor in the new Department of Computing Sciences at Bocconi University. My research bridges the areas of Computational Biology, Bioinformatics, and Artificial Intelligence (AI) to tackle complex and computationally intensive problems in biology and medicine, to move another step toward personalized and regenerative medicine. To do so, I strictly collaborate with expert biologists and physicians to perform data integration analyses and propose novel and advanced computational strategies to support personalized medicine.
+ 
+Thus, my main scientific interests include Computational Biology, Computational Systems Biology, Bioinformatics, Machine Learning, Computational Intelligence, High-Performance Computing, and Biomedical Image Analysis.
+
+<!-- A data-driven personal website
 ======
 Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
 
@@ -46,4 +76,4 @@ Example: editing a markdown file for a talk
 
 For more info
 ------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful. -->
