@@ -28,7 +28,7 @@ author:
   bio              : "Assistant Professor in Computer Science"
   location         : "Milan"
   employer         : "Bocconi University"
-  URI              :  "https://www.unibocconi.it/en"
+  uri              :  "https://www.unibocconi.it/en"
   email            : "andrea.tangherlonin@unibocconi.it" 
 
   # Academic websites
