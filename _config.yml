@@ -13,7 +13,7 @@ title                    : "Andrea Tangherloni, PhD"
 title_separator          : "-"
 name                     : &name "Andrea Tangherloni"
 description              : &description "personal description"
-url                      : https://andreatangherloni.com # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+url                      : andreatangherloni.com # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "andreatangherloni/andreatangherloni.github.io"
 
