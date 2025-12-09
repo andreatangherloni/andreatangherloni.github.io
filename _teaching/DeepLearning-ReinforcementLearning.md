@@ -2,7 +2,7 @@
 title: "Deep Learning and Reinforcement Learning"
 collection: teaching
 type: "Graduate course"
-permalink: /teaching/DeepLearning-ReinforcementLearning.md
+permalink: /teaching/DeepLearning-ReinforcementLearning
 venue: "Bocconi University, Department of Computing Sciences"
 date: 09-12-2025
 location: "Milan, Italy"
