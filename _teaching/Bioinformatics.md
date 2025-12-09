@@ -6,6 +6,7 @@ permalink: /teaching/Bioinformatics
 venue: "Bocconi University"
 date: 2025-01-01
 location: "Milan, Italy"
+current: true
 ---
 I have been teaching this course since 2025. 
 

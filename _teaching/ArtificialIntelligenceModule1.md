@@ -6,6 +6,7 @@ permalink: /teaching/ArtificialIntelligenceModule1
 venue: "Bocconi University"
 date: 2025-09-01
 location: "Milan, Italy"
+current: true
 ---
 I have been teaching this course since 2025. 
 

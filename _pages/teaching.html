@@ -7,6 +7,40 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
+<p>
+I currently teach and have previously taught several courses in Artificial Intelligence, Machine Learning, and Computational Biology.
+Below you can find an overview of the courses I currently teach and those I previously taught.
+</p>
+
+<hr>
+
+<h2>Current courses</h2>
+{% if current_courses.size > 0 %}
+  {% for post in current_courses %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p>No current courses listed yet.</p>
+{% endif %}
+
+<hr>
+
+
+<h2>Previous courses</h2>
+
+{% assign previous_courses = site.teaching
+   | where_exp: "post", "post.current != true"
+   | sort: "date"
+   | reverse %}
+
+{% if previous_courses.size > 0 %}
+  {% for post in previous_courses %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p>No previous courses listed yet.</p>
+{% endif %}
+
+<!-- {% for post in site.teaching reversed %}
   {% include archive-single.html %}
-{% endfor %}
+{% endfor %} -->

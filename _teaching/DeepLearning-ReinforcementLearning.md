@@ -6,6 +6,7 @@ permalink: /teaching/DeepLearning-ReinforcementLearning
 venue: "Bocconi University"
 date: 2024-01-01
 location: "Milan, Italy"
+current: true
 ---
 I have been teaching this course since 2024. 
 
