@@ -15,6 +15,12 @@ Below you can find an overview of the courses I currently teach and those I prev
 <hr>
 
 <h2>Current courses</h2>
+
+{% assign current_courses = site.teaching
+   | where: "current", true
+   | sort: "date"
+   | reverse %}
+
 {% if current_courses.size > 0 %}
   {% for post in current_courses %}
     {% include archive-single.html %}
@@ -24,7 +30,6 @@ Below you can find an overview of the courses I currently teach and those I prev
 {% endif %}
 
 <hr>
-
 
 <h2>Previous courses</h2>
 
