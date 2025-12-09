@@ -4,7 +4,7 @@ collection: teaching
 type: "Graduate course of the MSc in Artificial Intelligence"
 permalink: /teaching/DeepLearning-ReinforcementLearning
 venue: "Bocconi University"
-date: 01-01-2024
+date: Since 2024
 location: "Milan, Italy"
 ---
 
