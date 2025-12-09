@@ -54,10 +54,22 @@
   object-fit: cover;
 }
 
-.page__content p {
+/* Global justification for page content */
+.page__content {
   text-align: justify;
 }
 
+/* Keep headings left-aligned for readability */
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4,
+.page__content h5,
+.page__content h6 {
+  text-align: left;
+}
+
+/* Optional: justify list text too */
 .page__content li {
   text-align: justify;
 }
