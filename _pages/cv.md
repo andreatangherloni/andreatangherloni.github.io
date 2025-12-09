@@ -30,9 +30,9 @@ Work experience
 
 Education
 ======
-* PhD in Computer Science, University of Milano-Bicocca, 2019
-* MSc in Computer Science, University of Milano-Bicocca, 2015
-* BSc in Computer Science, University of Milano-Bicocca, 2013
+* PhD in Computer Science, University of Milano-Bicocca, Milan, 2019
+* MSc in Computer Science, University of Milano-Bicocca, Milan, 2015
+* BSc in Computer Science, University of Milano-Bicocca, Milan, 2013
 
 
 Visiting period

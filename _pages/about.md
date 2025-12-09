@@ -15,6 +15,7 @@ My research focuses on the design and development of novel computational methods
 - Biomedical Image Analysis and Pattern Recognition
 - Single-cell Omics and Data Integration
 
+
 Academic Background
 ======
 I earned both my BSc and MSc in Computer Science from the University of Milano-Bicocca (Milan, Italy) in 2013 and 2015, respectively. My Master’s thesis focused on simulating large-scale biochemical models, where I proposed a GPU-accelerated simulation approach.
