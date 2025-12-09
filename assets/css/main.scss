@@ -53,3 +53,15 @@
   height: 100%;
   object-fit: cover;
 }
+
+.page__content p {
+  text-align: justify;
+}
+
+.page__content li {
+  text-align: justify;
+}
+
+.page__content {
+  hyphens: auto;
+}
