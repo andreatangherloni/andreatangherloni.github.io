@@ -1,7 +1,7 @@
 ---
 title: "Artificial Intelligence - Module 1"
 collection: teaching
-type: "Graduate course, MSc in AData Analytics and Artificial Intelligence in Health Sciences"
+type: "Graduate course, MSc in Data Analytics and Artificial Intelligence in Health Sciences"
 permalink: /teaching/ArtificialIntelligenceModule1
 venue: "Bocconi University"
 date: 2025-09-01
