@@ -1,8 +1,8 @@
 ---
 title: "Computer Science"
 collection: teaching
-type: "Undergraduate course, BSc in Data Analytics and Artificial Intelligence in Health Sciences"
-permalink: /teaching/ArtificialIntelligenceModule1
+type: "Undergraduate course, BSc in Economia aziendale e management"
+permalink: /teaching/ComputerScience
 venue: "Bocconi University"
 date: 2024-01-01
 location: "Milan, Italy"

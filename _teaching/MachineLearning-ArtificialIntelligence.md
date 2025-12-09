@@ -1,8 +1,8 @@
 ---
 title: "Machine Learning and Artificial Intelligence"
 collection: teaching
-type: "Undergraduate course, BSc in Data Analytics and Artificial Intelligence in Health Sciences"
-permalink: /teaching/ArtificialIntelligenceModule1
+type: "Undergraduate course, BSc in Mathematical and Computing Sciences for Artificial Intelligence"
+permalink: /teaching/MachineLearning-ArtificialIntelligence
 venue: "Bocconi University"
 date: 2024-02-01
 location: "Milan, Italy"
