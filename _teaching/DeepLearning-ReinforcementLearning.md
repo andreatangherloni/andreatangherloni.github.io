@@ -1,7 +1,7 @@
 ---
 title: "Deep Learning and Reinforcement Learning"
 collection: teaching
-type: "Graduate course of the MSc in Artificial Intelligence"
+type: "Graduate course, MSc in Artificial Intelligence"
 permalink: /teaching/DeepLearning-ReinforcementLearning
 venue: "Bocconi University"
 date: 2024-01-01
