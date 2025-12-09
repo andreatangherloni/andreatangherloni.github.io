@@ -9,6 +9,25 @@ redirect_from:
 
 {% include base_path %}
 
+Work experience
+======
+* September 2023 - Current: Tenure-track Assistant Professor
+  * Department of Computing Sciences, Bocconi University, Milan, Italy
+  * Bocconi Institute for Data Science and Analytics, Bocconi University, Milan, Italy
+
+* December 2022 - August 2023: Postdoctoral Researcher fellow (paid on ERC 772970 - MicroC)
+  * Bocconi Institute for Data Science and Analytics, Bocconi University, Milan, Italy
+  * Department of Computing Sciences, Bocconi University, Milan, Italy
+
+* December 2020 - November 2022: Postdoctoral Researcher fellow
+  * Department of Human and Social Sciences, University of Bergamo, Bergamo, Italy
+
+* November 2018 - November 2020: Research Associate (paid on ERC 677501 - ZF_Blood)
+  * Department of Haematology, University of Cambridge, Cambridge, UK
+  * Wellcome – MRC Stem Cell Institute, Cambridge, UK
+  * Visiting worker at Wellcome Trust Sanger Institute, Hinxton, UK
+
+
 Education
 ======
 * PhD in Computer Science, University of Milano-Bicocca, 2019
@@ -16,26 +35,19 @@ Education
 * BSc in Computer Science, University of Milano-Bicocca, 2013
 
 
-Work experience
+Visiting period
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Erasmus+ Traineeship Program (April - July 2018) with the highest evaluation (90/90): visiting PhD student at the Department of Computer Science and Technology (The Computer Laboratory), University of Cambridge, Cambridge, UK 
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* ExtraUE Exchange Program (June - August 2017) with the highest evaluation (100/100): visiting PhD student at the Department of Cancer Biology, School of Medicine, Vanderbilt University, Nashville, TN, USA
 
 
 Grants
 ======
+* FIS Starting Grant (2024): € 1.166.220
+* Bocconi Junior Grant (2025): € 10.000
+* Bocconi Junior Grant (2024): € 10.000
+
   
 <!-- Skills
 ======
