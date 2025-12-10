@@ -1,0 +1,14 @@
+---
+title: "A Fast Feature Selection for Interpretable Modeling Based on Fuzzy Inference Systems"
+collection: publications
+category: conferences
+permalink: /publication/CIBCB-FastFeatureSelectionForInterpretableModeling
+excerpt: 'We propose a novel and efficient feature-selection strategy for Fuzzy Inference Systems that uses Random Forest–based variable ranking to identify the smallest set of informative features.'
+date: 2024-08-20
+venue: 'IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology (CIBCB)'
+paperurl: 'https://ieeexplore.ieee.org/document/10702107'
+citation: 'Tangherloni A., Cazzaniga P., Stranieri N., Buffa F.M., Nobile M.S. (2024). A Fast Feature Selection for Interpretable Modeling Based on Fuzzy Inference Systems. In IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology (CIBCB), IEEE.'
+---
+
+Large datasets are often beneficial for the generation of predictive models using machine learning approaches. However, it is often the case that not all variables in the dataset contain useful information. In fact, some variables might be useless, redundant, misleading, or even harmful to performance, both in terms of accuracy and computational effort. Because of that, Feature Selection (FS) is one of the most delicate and important steps in machine learning. This is even more relevant in the case of interpretable models based on Fuzzy Inference Systems (FIS). The reasons are two-fold: on the one hand, FIS are generally built on top of a data partitioning based on clustering, which can suffer from high dimensionality; on the other hand, the knowledge base of the FIS, to be concretely understandable, should not contain rules involving too many variables. FS can be performed using multiple approaches, most notably filter and wrapper methods. The latter are often based on evolutionary algorithms, where a population of candidate solutions (each representing a possible set of selected variables) evolves towards the optimal selection. Although wrapper methods can be effective, they are, in general, computationally expensive. In this work, we propose a completely different – and more computationally effective – algorithm based on Random Forest (RF) models. Specifically, we exploit RFs to rank variables according to their importance. Then, we use that information to perform a statistical analysis and determine the minimal set of features necessary to build an accurate FIS. We show the effectiveness of our approach by using two (semi)synthetic datasets built on real-world datasets, and we validate our approach by applying the FS method to a medical dataset.
+ 

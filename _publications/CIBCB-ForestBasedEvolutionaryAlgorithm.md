@@ -1,0 +1,13 @@
+---
+title: "Forest-based Evolutionary Algorithm for Reconstructing Boolean Gene Regulatory Networks"
+collection: publications
+category: conferences
+permalink: /publication/CIBCB-ForestBasedEvolutionaryAlgorithm
+excerpt: 'We introduce FP, a novel forest-structured evolutionary algorithm that models complex gene regulatory interactions and reconstructs Boolean GRNs with efficient convergence and strong precision.'
+date: 2024-08-20
+venue: 'IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology (CIBCB)'
+paperurl: 'https://ieeexplore.ieee.org/document/10702181'
+citation: 'Stranieri N., Buffa F.M.,Tangherloni A. (2024). Forest-based Evolutionary Algorithm for Reconstructing Boolean Gene Regulatory Networks. In IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology (CIBCB), IEEE.'
+---
+
+Gene Regulatory Networks (GRNs) play a fundamental role in orchestrating the expression of our genes through complex interactions between DNA, RNA, proteins, and other molecules. Accurately reconstructing such networks from gene expression data is a critical yet challenging task in Systems Biology due to their intricate nature and limited data availability. In this work, we introduce a novel Forest-based Evolutionary Algorithm (FP) designed for reconstructing Boolean GRNs from time series data of gene expressions. Unlike traditional methods that struggle with scalability and accurate representation of regulatory interactions, FP utilizes a forest structure where each tree represents the logical relationships between genes, enhancing the model’s capacity to depict complex networks efficiently. Our comprehensive testing indicates that FP rapidly converges towards potential solutions within a limited number of generations, although a higher fitness score does not always equate to a more accurate GRN representation. Implementing mini-batching techniques, inspired by their effectiveness in gradient descent optimization, shows promise in improving computational efficiency without sacrificing performance. A comparative analysis against the main state-of-the-art approaches reveals FP’s tendency towards conservative predictions, emphasizing precision over recall, making it particularly suitable for contexts where the cost of false positives is high. These initial results suggest that FP is a robust and efficient tool for GRN inference. 
