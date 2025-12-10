@@ -1,0 +1,13 @@
+---
+title: "GPU-powered and settings-free parameter estimation of biochemical systems"
+collection: publications
+category: conferences
+permalink: /publication/CEC-GPU_poweredSettingsFreePE
+excerpt: 'TTo address the computational demands of biochemical parameter estimation, we combine PPSO with GPU-accelerated ODE simulation and demonstrate that PPSO outperforms standard PSO in runtime while achieving similar parameter-fitness quality.'
+date: 2016-07-24
+venue: 'IEEE Congress on Evolutionary Computation (CEC)'
+paperurl: 'https://ieeexplore.ieee.org/document/7743775'
+citation: 'Nobile M.S., Tangherloni A. Besozzi D., Cazzaniga P. (2016). GPU-powered and settings-free parameter estimation of biochemical systems. In IEEE Congress on Evolutionary Computation (CEC), IEEE.'
+---
+
+To understand the emergent behavior of biochemical systems, computational analyses generally require the inference of unknown reaction kinetic constants, a problem known as parameter estimation (PE). In this work we propose a PE methodology that exploits Particle Swarm Optimization (PSO) to examine a set of candidate kinetic parameterizations, whose fitness is evaluated by comparing given target time-series of experimental data with in silico dynamics, simulated by using the parameterization encoded by each particle. In particular, we consider a Fuzzy Logic-based version of PSO - called Proactive Particles in Swarm Optimization (PPSO) - that automatically tunes the setting (inertia, cognitive and social factors) of each particle, independently from all other particles in the swarm. Since the optimization phase requires a large number of simulations for each particle at each iteration, we exploit a GPU-accelerated deterministic simulator, called cupSODA, that automatically generates the system of Ordinary Differential Equations associated with the biochemical system and performs its simulation for each candidate parameterization. We compare the performance of PPSO with respect to PSO for the PE problem by considering two biochemical systems as test cases. In addition, we evaluate the impact on PE of different strategies adopted, both in PPSO and PSO, for the selection of the initial positions of particles within the search space. We prove the effectiveness of our settings-free PE methodology by showing that PPSO outperforms PSO with respect to the computational time required to execute the optimization, achieving comparable results concerning the fitness of the best parameterization found.

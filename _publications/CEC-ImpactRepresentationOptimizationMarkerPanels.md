@@ -1,0 +1,13 @@
+---
+title: "The impact of representation on the optimization of marker panels for single-cell RNA data"
+collection: publications
+category: conferences
+permalink: /publication/CEC-ImpactRepresentationOptimizationMarkerPanels
+excerpt: 'To address the NP-hard challenge of marker panel identification, we introduce and compare three GA representations, demonstrating that more flexible encodings yield the most effective panels, especially in 0-knowledge scenarios.'
+date: 2021-06-28
+venue: 'IEEE Congress on Evolutionary Computation (CEC)'
+paperurl: 'https://ieeexplore.ieee.org/document/9504808'
+citation: 'Tangherloni A., Riva S.G., Spolaor S., Besozzi D., Nobile M.S., Cazzaniga P. (2021). The impact of representation on the optimization of marker panels for single-cell RNA data. In IEEE Congress on Evolutionary Computation (CEC), IEEE.'
+---
+
+The increasing number of single-cell transcriptomic and single-cell RNA sequencing studies are allowing for a deeper understanding of the molecular processes underlying the normal development of an organism as well as the onset of pathologies. These studies continuously refine the functional roles of known cell populations, and provide their characterization as soon as putatively novel cell populations are detected. In order to isolate the cell populations for further tailored analysis, succinct marker panels—composed of a few cell surface proteins and clusters of differentiation molecules—must be identified. The identification of these marker panels is a challenging computational problem due to its intrinsic combinatorial nature, which makes it an NP-hard problem. Genetic Algorithms (GAs) have been successfully used in Bioinformatics and other biomedical applications to tackle combinatorial problems. We present here a GA-based approach to solve the problem of the identification of succinct marker panels. Since the performance of a GA is strictly related to the representation of the candidate solutions, we propose and compare three alternative representations, able to implicitly introduce different constraints on the search space. For each representation, we perform a fine-tuning of the parameter settings to calibrate the GA, and we show that different representations yield different performance, where the most relaxed representations— in which the GA can also evolve the number of genes in the panel—turn out to be the more effective, especially in the case of 0-knowledge problems. Our results also show that the marker panels identified by GAs can outperform manually curated solutions.
