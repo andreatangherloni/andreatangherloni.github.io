@@ -1,0 +1,13 @@
+---
+title: "We Are Sending You Back... to the Optimum! Fuzzy Time Travel Particle Swarm Optimization"
+collection: publications
+category: conferences
+permalink: /publication/EVOSTAR-WeAreSendingYouBack
+excerpt: 'To prevent FST-PSO from getting trapped in local optima, we propose FTT-PSO, a time-travel strategy that rewinds the swarm and reinitialises the global best when progress stalls, yielding superior results on major benchmark suites.'
+date: 2025-04-17
+venue: 'International Conference on the Applications of Evolutionary Computation (Part of EvoStar)'
+paperurl: 'https://link.springer.com/chapter/10.1007/978-3-031-90065-5_10'
+citation: 'Papetti D.M., Tangherloni A., Coelho V., Besozzi D., Cazzaniga P., Nobile M.S. (2025). We Are Sending You Back... to the Optimum! Fuzzy Time Travel Particle Swarm Optimization. In International Conference on the Applications of Evolutionary Computation (Part of EvoStar), Springer.'
+---
+
+Particle Swarm Optimization (PSO) is a swarm intelligence meta-heuristics whose performance highly depends on the selection of its hyper-parameters, which control the particles’ exploration and exploitation capabilities during the search process. Since the tuning of the hyper-parameters is problem-dependent, settings-free methods are preferable. Fuzzy Self-Tuning PSO (FST-PSO) is a settings-free variant of PSO that exploits a Fuzzy Rule-Based System to determine the best hyper-parameter values for each particle dynamically. Despite this advantage, the optimization process might get stuck in local optima. Here, we propose a what-if strategy to generate and explore alternate swarm histories: what happens if we could go back in time and change something in the past so that one particle “was” different at the beginning of the optimization? Specifically, whenever the global best particle does not improve for a number of iterations, it is terminated and re-initialized, meanwhile sending the rest of the swarm back to the initial configuration. This approach, called “time travel” FST-PSO (FTT-PSO), works under the assumption that the convergence of any particle towards an optimum is strongly related to the influence of the global best particle. We compare the performance of FTT-PSO against FST-PSO on the benchmark suites used in IEEE CEC and GECCO competitions. Our results show that time traveling allows for outperforming both the standard and the multistart versions of FST-PSO.
