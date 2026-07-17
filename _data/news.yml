@@ -4,8 +4,8 @@
 - tag: "Opportunity"
   icon: "fa-user-graduate"
   title: "Available theses"
-  excerpt: "I am looking for motivated Bachelor’s and Master’s students interested in AI for biology and medicine at Bocconi University. Get in touch!"
-  url: "mailto:andrea.tangherloni@unibocconi.it"
+  excerpt: "Bachelor’s and Master’s thesis projects on AI for single-cell biology are available — see the topics and how to apply."
+  url: "/theses/"
 
 - tag: "Editorial"
   icon: "fa-book"
