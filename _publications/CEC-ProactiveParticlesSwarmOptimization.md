@@ -2,7 +2,7 @@
 title: "Proactive Particles in Swarm Optimization: A settings-free algorithm for real-parameter single objective optimization problems"
 collection: publications
 category: conferences
-permalink: /publication/CEC-ComputationalIntelligencePE
+permalink: /publication/CEC-ProactiveParticlesSwarmOptimization
 excerpt: 'To address PSO’s sensitivity to parameter settings, we propose PPSO, a fuzzy logic–driven algorithm that proactively adapts parameters for each particle and improves convergence and performance across high-dimensional benchmarks.'
 date: 2017-06-05
 venue: 'IEEE Congress on Evolutionary Computation (CEC)'

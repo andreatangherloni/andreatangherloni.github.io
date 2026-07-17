@@ -1,0 +1,13 @@
+---
+title: "USE-Net: Incorporating Squeeze-and-Excitation blocks into U-Net for prostate zonal segmentation of multi-institutional MRI datasets"
+collection: publications
+category: manuscripts
+permalink: /publication/Neurocomputing-USENet
+excerpt: 'USE-Net incorporates Squeeze-and-Excitation blocks into U-Net for prostate zonal segmentation, achieving strong cross-dataset generalization on multi-institutional MRI.'
+date: 2019-11-01
+venue: 'Neurocomputing'
+paperurl: 'https://doi.org/10.1016/j.neucom.2019.07.006'
+citation: 'Rundo L., Han C., Nagano Y., Zhang J., Hataya R., Militello C., Tangherloni A., Nobile M.S., Ferretti C., Besozzi D., Gilardi M.C., Vitabile S., Mauri G., Nakayama H., Cazzaniga P. (2019). USE-Net: Incorporating Squeeze-and-Excitation blocks into U-Net for prostate zonal segmentation of multi-institutional MRI datasets. Neurocomputing, 365: 31-43.'
+---
+
+Prostate cancer is the most common malignant tumors in men but prostate Magnetic Resonance Imaging (MRI) analysis remains challenging. Besides whole prostate gland segmentation, the capability to differentiate between the blurry boundary of the Central Gland (CG) and Peripheral Zone (PZ) can lead to differential diagnosis, since tumor's frequency and severity differ in these regions. To tackle the prostate zonal segmentation task, we propose a novel Convolutional Neural Network (CNN), called USE-Net, which incorporates Squeeze-and-Excitation (SE) blocks into U-Net. Especially, the SE blocks are added after every Encoder (Enc USE-Net) or Encoder-Decoder block (Enc-Dec USE-Net). This study evaluates the generalization ability of CNN-based architectures on three T2-weighted MRI datasets, each one consisting of a different number of patients and heterogeneous image characteristics, collected by different institutions. The following mixed scheme is used for training/testing: (i) training on either each individual dataset or multiple prostate MRI datasets and (ii) testing on all three datasets with all possible training/testing combinations. USE-Net is compared against three state-of-the-art CNN-based architectures (i.e., U-Net, pix2pix, and Mixed-Scale Dense Network), along with a semi-automatic continuous max-flow model. The results show that training on the union of the datasets generally outperforms training on each dataset separately, allowing for both intra-/cross-dataset generalization. Enc USE-Net shows good overall generalization under any training condition, while Enc-Dec USE-Net remarkably outperforms the other methods when trained on all datasets. These findings reveal that the SE blocks' adaptive feature recalibration provides excellent cross-dataset generalization when testing is performed on samples of the datasets used during training.

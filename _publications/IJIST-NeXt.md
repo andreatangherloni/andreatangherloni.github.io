@@ -1,0 +1,13 @@
+---
+title: "NeXt for neuro-radiosurgery: A fully automatic approach for necrosis extraction in brain tumor MRI using an unsupervised machine learning technique"
+collection: publications
+category: manuscripts
+permalink: /publication/IJIST-NeXt
+excerpt: 'NeXt is a fully automatic method based on Fuzzy C-Means for extracting necrotic regions in brain tumor MRI to support neuro-radiosurgery.'
+date: 2018-03-01
+venue: 'International Journal of Imaging Systems and Technology'
+paperurl: 'https://doi.org/10.1002/ima.22253'
+citation: 'Rundo L., Militello C., Tangherloni A., Russo G., Vitabile S., Gilardi M.C., Mauri G. (2018). NeXt for neuro-radiosurgery: A fully automatic approach for necrosis extraction in brain tumor MRI using an unsupervised machine learning technique. International Journal of Imaging Systems and Technology, 28(1): 21-37.'
+---
+
+Stereotactic neuro-radiosurgery is a well-established therapy for intracranial diseases, especially brain metastases and highly invasive cancers that are difficult to treat with conventional surgery or radiotherapy. Nowadays, magnetic resonance imaging (MRI) is the most used modality in radiation therapy for soft-tissue anatomical districts, allowing for an accurate gross tumor volume (GTV) segmentation. Investigating also necrotic material within the whole tumor has significant clinical value in treatment planning and cancer progression assessment. These pathological necrotic regions are generally characterized by hypoxia, which is implicated in several aspects of tumor development and growth. Therefore, particular attention must be deserved to these hypoxic areas that could lead to recurrent cancers and resistance to therapeutic damage. This article proposes a novel fully automatic method for necrosis extraction (NeXt), using the Fuzzy C-Means algorithm, after the GTV segmentation. This unsupervised Machine Learning technique detects and delineates the necrotic regions also in heterogeneous cancers. The overall processing pipeline is an integrated two-stage approach useful to support neuro-radiosurgery. NeXt can be exploited for dose escalation, allowing for a more selective strategy to increase radiation dose in hypoxic radioresistant areas. Moreover, NeXt analyzes contrast-enhanced T1-weighted MR images alone and does not require multispectral data, representing a clinically feasible solution. This study considers a dataset composed of 32 brain metastatic tumors, wherein 20 tumors present necroses. The accuracy of NeXt was evaluated using both spatial overlap-based and distance-based metrics, achieving these average values: Dice similarity coefficient 95.93% ± 4.23% and mean absolute distance 0.225 ± 0.229 (pixels).

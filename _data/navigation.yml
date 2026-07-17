@@ -13,6 +13,13 @@ main:
 
   - title: "Publications"
     url: /publications/
+    children:
+      - title: "Journal Articles"
+        url: /publications/#journal-articles
+      - title: "Conference Papers"
+        url: /publications/#conference-papers
+      - title: "Books"
+        url: /publications/#books
 
   - title: "Talks"
     url: /talks/    
