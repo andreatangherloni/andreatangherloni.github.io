@@ -88,6 +88,20 @@ I am also a member of the <a href="https://cis.ieee.org/activities/technical-act
 </div>
 
 <section class="hp-section">
+  <h2 id="grants">Grants</h2><hr />
+  <div class="hp-grid hp-grid--3">
+    {% for grant in site.data.grants %}
+      <div class="hp-card">
+        <div class="hp-card__icon"><i class="fa-solid {{ grant.icon | default: 'fa-award' }}" aria-hidden="true"></i></div>
+        {% if grant.subtitle %}<span class="hp-card__sub">{{ grant.subtitle }}</span>{% endif %}
+        <p class="hp-card__title">{{ grant.title }}</p>
+        <p class="hp-card__desc">{{ grant.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="hp-section">
   <h2 id="projects">Projects &amp; Tools</h2><hr />
   <div class="hp-grid hp-grid--tools">
     {% for project in site.data.projects %}
