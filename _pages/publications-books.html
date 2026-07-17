@@ -1,0 +1,18 @@
+---
+layout: archive
+title: "Books & Chapters"
+permalink: /publications/books/
+author_profile: true
+---
+
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my publications on my <a href="{{site.author.googlescholar}}">Google Scholar</a> profile.</div>
+{% endif %}
+
+{% include base_path %}
+
+{% for post in site.publications reversed %}
+  {% if post.category == 'books' %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}

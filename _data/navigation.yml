@@ -15,11 +15,11 @@ main:
     url: /publications/
     children:
       - title: "Journal Articles"
-        url: /publications/#journal-articles
+        url: /publications/journals/
       - title: "Conference Papers"
-        url: /publications/#conference-papers
+        url: /publications/conferences/
       - title: "Books"
-        url: /publications/#books
+        url: /publications/books/
 
   # - title: "Talks"
   #   url: /talks/
