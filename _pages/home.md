@@ -34,6 +34,10 @@ a.hp-card:hover{
   border-color:var(--global-link-color);
 }
 a.hp-card:hover .hp-card__icon{transform:scale(1.06);background:var(--global-link-color);color:#fff;}
+/* underline only the title on hover, never the description */
+a.hp-card, a.hp-card:hover, a.hp-card:focus{text-decoration:none;}
+.hp-card__desc, .hp-card__sub{text-decoration:none;}
+a.hp-card:hover .hp-card__title{text-decoration:underline;}
 
 .hp-card__icon{
   display:inline-flex;align-items:center;justify-content:center;
@@ -60,8 +64,9 @@ I am an <strong>Assistant Professor</strong> in the Department of Computing Scie
 <strong>Bocconi University</strong> and a member of the Bocconi Institute for Data Science and
 Analytics (BIDSA). My research combines <strong>Computational Intelligence</strong> and
 <strong>Deep Learning</strong> with <strong>High-Performance Computing</strong> to tackle complex
-problems in biology and medicine — from single-cell omics and systems biology to biomedical image
+problems in <strong>biology and medicine</strong>, from single-cell omics and systems biology to biomedical image
 analysis and precision medicine. I am always open to interdisciplinary collaborations.
+I am also a member of the <a href="https://cis.ieee.org/activities/technical-activities/bioinformatics-and-bioengineering-technical-committee?view=article&amp;id=137:bioinformatics-and-bioinformatics-members&amp;catid=30:technical-committees">IEEE CIS Bioinformatics and Bioengineering Technical Committee (BBTC)</a>.
 </p>
 
 <div class="hp-grid hp-grid--3">
