@@ -1,0 +1,55 @@
+# Latest-news items shown on the homepage.
+# Fields: date (YYYY-MM-DD), tag, title, excerpt (optional), url (optional).
+# Items are sorted by date (newest first) automatically.
+# NOTE: dates seeded from the CV are approximate (year is accurate;
+#       month/day set for ordering) — adjust as needed.
+
+- date: 2026-07-01
+  tag: "Opportunity"
+  title: "Bachelor’s and Master’s theses available"
+  excerpt: "I am looking for motivated students interested in AI for biology and medicine at the Department of Computing Sciences, Bocconi University. Get in touch!"
+  url: "mailto:andrea.tangherloni@unibocconi.it"
+
+- date: 2026-06-30
+  tag: "Talk"
+  title: "Presenting EvoGrad at IEEE CEC 2026"
+  excerpt: "Talk on “EvoGrad: Accelerated Metaheuristics in a Differentiable Wonderland” at the IEEE Congress on Evolutionary Computation, Maastricht."
+  url: "/publication/CEC-EvoGrad"
+
+- date: 2026-02-01
+  tag: "Editorial"
+  title: "Editor-in-Chief of the River Series “Computational Approaches in Biology and Medicine”"
+  excerpt: "Leading the new River Publishers book series on computational approaches in biology and medicine."
+  url: "https://www.riverpublishers.com/bookspubseries.php?sn=Computational%20Approaches%20in%20Biology%20and%20Medicine"
+
+- date: 2026-01-20
+  tag: "Grant"
+  title: "Awarded the Ricerca Finalizzata (RF2024) grant AIPHO"
+  excerpt: "€500k to develop AI-driven screening for mammography to enhance public health outcomes."
+
+- date: 2025-10-19
+  tag: "Publication"
+  title: "Paper at ICCV 2025 (CV4BIOM workshop)"
+  excerpt: "“Now You See Me, Now You Don’t”: a unified framework for expression-consistent anonymization in talking-head videos."
+  url: "/publication/ICCV-NowYouSeeMe"
+
+- date: 2025-08-20
+  tag: "Publication"
+  title: "Two papers at IEEE CIBCB 2025"
+  excerpt: "GENESIS and Knowledge-Enriched Cell-Type Annotation presented in Tainan, Taiwan."
+  url: "/publication/CIBCB-GENESIS"
+
+- date: 2025-12-01
+  tag: "Editorial"
+  title: "Associate Editor for PLOS ONE and BMC Bioinformatics"
+  excerpt: "Serving as Associate Editor for PLOS ONE (Public Library of Science) and BMC Bioinformatics (Springer Nature)."
+
+- date: 2025-03-01
+  tag: "Grant"
+  title: "Awarded the FIS Starting Grant DECODE"
+  excerpt: "€1.2M to decode the language of single-cell gene regulation with Transformers."
+
+- date: 2025-01-15
+  tag: "Award"
+  title: "Bocconi Junior Grant 2025"
+  excerpt: "Received a Bocconi Junior Grant supporting ongoing research at the Department of Computing Sciences."

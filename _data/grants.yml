@@ -1,0 +1,17 @@
+# Grants shown on the homepage "Grants" grid.
+# Fields: title, subtitle (program · amount), icon (Font Awesome 6 solid), description
+
+- title: "DECODE"
+  subtitle: "FIS Starting Grant · €1.2M"
+  icon: "fa-dna"
+  description: "Decoding the language of single-cell gene regulation with Transformers."
+
+- title: "AIPHO"
+  subtitle: "Ricerca Finalizzata (RF2024) · €500k"
+  icon: "fa-ribbon"
+  description: "AI-driven screening for mammography to enhance public health outcomes."
+
+- title: "Bocconi Junior Grants"
+  subtitle: "Bocconi University · €10k (2024, 2025)"
+  icon: "fa-award"
+  description: "Two Bocconi Junior Grants supporting ongoing research at the Department of Computing Sciences."

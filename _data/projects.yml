@@ -1,0 +1,35 @@
+# Projects / tools shown on the homepage grid (each links to its code repo).
+# Fields: title, description, url (repo). The GitHub/GitLab icon is chosen
+# automatically from the URL.
+
+- title: "EvoGrad"
+  description: "Differentiable framework integrating evolutionary and swarm operators with gradient-based optimization."
+  url: "https://github.com/andreatangherloni/EvoGrad"
+
+- title: "EvoBcrn"
+  description: "Parameter estimation for biochemical reaction networks via differentiable metaheuristics and neural surrogates."
+  url: "https://github.com/andreatangherloni/EvoBcrn"
+
+- title: "iEACOP"
+  description: "Improved Evolutionary Algorithm for Complex-process Optimization for single-objective problems."
+  url: "https://github.com/andreatangherloni/iEACOP"
+
+- title: "MAGNETO"
+  description: "Automatic generator of compact marker panels from single-cell transcriptomic data."
+  url: "https://gitlab.com/andreatangherloni/magneto"
+
+- title: "MedGA"
+  description: "Genetic Algorithm–based enhancement of medical images with a bimodal intensity histogram."
+  url: "https://github.com/andreatangherloni/MedGA"
+
+- title: "GenHap"
+  description: "Genetic Algorithm–based method for accurate and fast haplotype assembly."
+  url: "https://github.com/andreatangherloni/GenHap"
+
+- title: "scAEspy"
+  description: "Autoencoder-based dimensionality reduction and integration of scRNA-Seq data."
+  url: "https://gitlab.com/cvejic-group/scaespy"
+
+- title: "FiCoS"
+  description: "GPU-powered deterministic simulator for large-scale biochemical reaction networks."
+  url: "https://gitlab.com/andreatangherloni/ficos"
