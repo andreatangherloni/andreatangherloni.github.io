@@ -16,5 +16,20 @@
   </div>
 </div>
 
-<a href="{{ base_path }}/sitemap/">Sitemap</a>
+<a class="footer-meta__link" href="{{ base_path }}/sitemap/">Sitemap</a>
+
+<script>
+/* The footer is fixed, so the body needs bottom padding equal to its height.
+   Measured rather than hard-coded: the previous 9em guess is exactly what
+   broke when the footer grew taller than the reserved space. */
+(function () {
+  var f = document.querySelector('.page__footer');
+  if (!f) { return; }
+  function sync() { document.body.style.paddingBottom = f.offsetHeight + 'px'; }
+  sync();
+  window.addEventListener('resize', sync);
+  window.addEventListener('load', sync);
+  if (window.ResizeObserver) { new ResizeObserver(sync).observe(f); }
+})();
+</script>
 <!-- end custom footer snippets -->

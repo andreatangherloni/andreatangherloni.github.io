@@ -264,59 +264,108 @@
 }
 
 /* --------------------------------------------------------------------------
-   Funder "logo firma" — site-wide footer (_includes/footer/custom.html)
+   Fixed, always-visible footer
 
-   MUR's FIS communication guidelines require the logo firma on every detail
-   page, so it lives in the footer rather than on individual pages.
+   The theme shipped a sticky-footer hack: body{padding-bottom:9em} reserving a
+   hard-coded 144px, with .page__footer absolutely positioned at the document
+   bottom. That silently breaks the moment the footer is taller than 9em, which
+   is what happened when the funder logos were added — the footer began
+   overlapping the content above it.
+
+   The footer is now genuinely fixed to the viewport, kept compact, and its
+   height is measured in JS (see _includes/footer/custom.html) to set the body
+   padding, so the two can never drift apart again.
    -------------------------------------------------------------------------- */
+body { padding-bottom: 64px; } /* fallback only; JS sets the exact value */
+
+.page__footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;                 /* same layer as the masthead, opposite edge */
+  float: none;
+  clear: none;
+  margin-top: 0;
+  animation: none;             /* the intro fade is distracting on a fixed bar */
+  box-shadow: 0 -1px 12px rgba(0, 0, 0, .10);
+
+  footer {
+    position: relative;        /* positioning context for the logo plate */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 62px;          /* the logo plate is out of flow and cannot
+                                  prop the footer open, so reserve for it */
+    margin-top: 0;
+    padding: .5em 1em;
+    padding-right: 200px;      /* keep text clear of the logos */
+  }
+
+  /* One compact meta row: Sitemap · FOLLOW · copyright */
+  .footer-meta__link,
+  .page__footer-follow,
+  .page__footer-copyright {
+    display: inline;
+    font-size: .68rem;
+    line-height: 1.4;
+  }
+
+  .page__footer-follow {
+    ul, li { display: inline; padding: 0; margin: 0; }
+    li + li { margin-left: .55em; }
+    &::before { content: "\00b7"; margin: 0 .5em; opacity: .6; }
+  }
+
+  .page__footer-copyright {
+    font-size: .66rem;
+    &::before { content: "\00b7"; margin: 0 .5em; opacity: .6; }
+  }
+}
+
 .footer-funding {
-  /* No max-width or auto margins: the theme's own <footer> already centres and
-     pads the content (max-width $x-large, 1em side padding). Capping this
-     narrower made the block sit inset and centred while Sitemap and the
-     copyright below it are flush left, and squeezed the sentence onto two
-     lines. Span the full footer width and push the logos to the far right. */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.4em;
-  margin: 0 0 1.4em;
-  text-align: left;
+  display: block;
+  margin: 0 0 .1em;
 
   .footer-funding__note {
-    flex: 1 1 340px;
     margin: 0;
-    font-size: .8rem;
-    line-height: 1.55;
+    font-size: .72rem;
+    line-height: 1.4;
     color: var(--global-text-color-light);
     hyphens: none;
   }
 
-  /* Both marks are dark-on-transparent; a white plate keeps them legible in
-     the dark theme and supplies the required clear space ("area di rispetto",
-     >= 1/8 of the logo base when set beside text). */
+  /* Pulled out of flow and centred against the whole footer, so it lines up
+     with the funding sentence and the Sitemap/FOLLOW/copyright row together
+     rather than sitting in a band of its own. Both marks are
+     dark-on-transparent, so the white plate keeps them legible in dark mode
+     and supplies the required clear space. */
   .footer-funding__logos {
-    flex: 0 0 auto;
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
-    gap: 1.5em;
-    padding: .7em 1.1em;
+    gap: 1em;
+    padding: .35em .65em;
     background: #fff;
     border: 1px solid var(--global-border-color);
-    border-radius: 8px;
+    border-radius: 6px;
   }
 
   .footer-funding__logo { display: block; width: auto; }
-  .footer-funding__logo--mur { height: 52px; }
-  .footer-funding__logo--fis { height: 32px; }
+  .footer-funding__logo--mur { height: 32px; }
+  .footer-funding__logo--fis { height: 20px; }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+  .page__footer footer { padding-right: 150px; min-height: 56px; }
+  .page__footer .page__footer-copyright { display: none; }
   .footer-funding {
-    justify-content: flex-start;
-    .footer-funding__logos { gap: 1.1em; padding: .6em .9em; }
-    .footer-funding__logo--mur { height: 44px; }
-    .footer-funding__logo--fis { height: 27px; }
+    .footer-funding__note { font-size: .68rem; }
+    .footer-funding__logo--mur { height: 28px; }
+    .footer-funding__logo--fis { height: 17px; }
   }
 }
 
