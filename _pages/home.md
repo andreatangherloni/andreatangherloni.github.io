@@ -1,7 +1,6 @@
 ---
 layout: single
 permalink: /
-title: ""
 author_profile: true
 redirect_from: 
   - /home/
@@ -57,7 +56,10 @@ a.hp-card:hover .hp-card__title{text-decoration:underline;}
 @media (max-width:600px){
   .hp-grid--tools{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}
 }
+
 </style>
+
+<h1 class="sr-only">Andrea Tangherloni &mdash; Assistant Professor, Department of Computing Sciences, Bocconi University</h1>
 
 <p class="hp-intro">
 I am an <strong>Assistant Professor</strong> in the Department of Computing Sciences at
@@ -91,14 +93,19 @@ I am also a member of the <a href="https://cis.ieee.org/activities/technical-act
   <h2 id="grants">Grants</h2><hr />
   <div class="hp-grid hp-grid--3">
     {% for grant in site.data.grants %}
-      <div class="hp-card">
-        <div class="hp-card__icon"><i class="fa-solid {{ grant.icon | default: 'fa-award' }}" aria-hidden="true"></i></div>
-        {% if grant.subtitle %}<span class="hp-card__sub">{{ grant.subtitle }}</span>{% endif %}
-        <p class="hp-card__title">{{ grant.title }}</p>
-        <p class="hp-card__desc">{{ grant.description }}</p>
-      </div>
+      {% if grant.url %}
+        <a class="hp-card" href="{{ grant.url | prepend: base_path }}">
+      {% else %}
+        <div class="hp-card">
+      {% endif %}
+          <div class="hp-card__icon"><i class="fa-solid {{ grant.icon | default: 'fa-award' }}" aria-hidden="true"></i></div>
+          {% if grant.subtitle %}<span class="hp-card__sub">{{ grant.subtitle }}</span>{% endif %}
+          <p class="hp-card__title">{{ grant.title }}</p>
+          <p class="hp-card__desc">{{ grant.description }}</p>
+      {% if grant.url %}</a>{% else %}</div>{% endif %}
     {% endfor %}
   </div>
+
 </section>
 
 <section class="hp-section">

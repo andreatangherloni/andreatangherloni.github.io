@@ -44,7 +44,7 @@ Visiting period
 
 Grants
 ======
-* FIS Starting Grant (2024): € 1.166.220
+* FIS Starting Grant (2025): € 1.166.220
 * Bocconi Junior Grant (2025): € 10.000
 * Bocconi Junior Grant (2024): € 10.000
 

@@ -15,12 +15,14 @@ My research focuses on the design and development of novel computational methods
 - Biomedical Image Analysis and Pattern Recognition
 - Single-cell Omics and Data Integration
 
+This vision currently drives **DECODE**, the project I lead as Principal Investigator thanks to a FIS Starting Grant (Fondo Italiano per la Scienza, € 1.2M) awarded in 2025. DECODE decodes the language of single-cell gene regulation with Transformers, developing foundation models that learn gene–gene regulatory relationships directly from large-scale single-cell transcriptomic data.
+
 
 Academic Background
 ======
 I earned both my BSc and MSc in Computer Science from the University of Milano-Bicocca (Milan, Italy) in 2013 and 2015, respectively. My Master’s thesis focused on simulating large-scale biochemical models, where I proposed a GPU-accelerated simulation approach.
 
-In 2019, I obtained my PhD in Computer Science at the same university, with a thesis titled "High-Performance Computing to tackle complex problems in life sciences",supervised by Prof. Daniela Besozzi and Prof. Paolo Cazzaniga. During my doctoral studies, I spent research periods abroad at:
+In 2019, I obtained my PhD in Computer Science at the same university, with a thesis titled "High-Performance Computing to tackle complex problems in life sciences", supervised by Prof. Daniela Besozzi and Prof. Paolo Cazzaniga. During my doctoral studies, I spent research periods abroad at:
 - The Department of Cancer Biology, Vanderbilt University (Nashville, TN, USA)
 - The Computer Laboratory, University of Cambridge (Cambridge, UK)
 

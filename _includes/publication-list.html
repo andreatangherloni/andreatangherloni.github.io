@@ -1,0 +1,131 @@
+{% include base_path %}
+
+{% if include.category %}
+  {% assign pubs = site.publications | where: "category", include.category %}
+{% else %}
+  {% assign pubs = site.publications %}
+{% endif %}
+{% assign pubs = pubs | sort: "date" | reverse %}
+
+<div class="publist" data-publist>
+
+  <div class="publist__toolbar">
+    <div class="publist__searchwrap">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <input type="search" class="publist__search" data-pubsearch
+             placeholder="Filter by title, venue, year or co-author&hellip;"
+             aria-label="Filter publications" autocomplete="off">
+    </div>
+    <p class="publist__count" data-pubcount aria-live="polite"></p>
+  </div>
+
+  {% unless include.category %}
+    <div class="publist__chips" role="group" aria-label="Filter by publication type">
+      <button type="button" class="publist__chip is-active" data-pubchip="">All</button>
+      {% for category in site.publication_category %}
+        <button type="button" class="publist__chip" data-pubchip="{{ category[0] }}">{{ category[1].title }}</button>
+      {% endfor %}
+    </div>
+  {% endunless %}
+
+  {% assign current_year = "" %}
+  {% for post in pubs %}
+    {% assign y = post.date | default: "1900-01-01" | date: "%Y" %}
+
+    {% if y != current_year %}
+      <h2 class="publist__year" data-pubyear="{{ y }}">{{ y }}</h2>
+      {% assign current_year = y %}
+    {% endif %}
+
+    {% capture haystack %}{{ post.title }} {{ post.venue }} {{ y }} {{ post.citation }}{% endcapture %}
+
+    <article class="pub" data-pubitem data-year="{{ y }}" data-cat="{{ post.category }}"
+             data-search="{{ haystack | strip_html | strip_newlines | downcase | escape_once }}">
+      <h3 class="pub__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+
+      <p class="pub__meta">
+        {% if post.venue %}<span class="pub__venue">{{ post.venue }}</span>{% endif %}
+        <span class="pub__year">{{ y }}</span>
+        {% unless include.category %}
+          {% if post.category and site.publication_category[post.category] %}
+            <span class="pub__cat">{{ site.publication_category[post.category].title }}</span>
+          {% endif %}
+        {% endunless %}
+      </p>
+
+      {% if post.excerpt %}
+        <p class="pub__excerpt">{{ post.excerpt | strip_html | strip_newlines }}</p>
+      {% endif %}
+
+      {% if post.paperurl or post.slidesurl or post.bibtexurl %}
+        <p class="pub__links">
+          {% if post.paperurl %}<a class="pub__link" href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>Paper</a>{% endif %}
+          {% if post.slidesurl %}<a class="pub__link" href="{{ post.slidesurl }}"><i class="fa-solid fa-display" aria-hidden="true"></i>Slides</a>{% endif %}
+          {% if post.bibtexurl %}<a class="pub__link" href="{{ post.bibtexurl }}"><i class="fa-solid fa-quote-right" aria-hidden="true"></i>BibTeX</a>{% endif %}
+        </p>
+      {% endif %}
+
+      {% if post.citation %}
+        <details class="pub__cite">
+          <summary>Citation</summary>
+          <p>{{ post.citation }}</p>
+        </details>
+      {% endif %}
+    </article>
+  {% endfor %}
+
+  <p class="publist__empty" data-pubempty hidden>No publications match that filter.</p>
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('[data-publist]');
+  if (!root) { return; }
+
+  var input  = root.querySelector('[data-pubsearch]');
+  var count  = root.querySelector('[data-pubcount]');
+  var empty  = root.querySelector('[data-pubempty]');
+  var items  = [].slice.call(root.querySelectorAll('[data-pubitem]'));
+  var years  = [].slice.call(root.querySelectorAll('[data-pubyear]'));
+  var chips  = [].slice.call(root.querySelectorAll('[data-pubchip]'));
+  var total  = items.length;
+  var cat    = '';
+
+  function render() {
+    var q = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+
+    items.forEach(function (el) {
+      var hit = (!q || el.getAttribute('data-search').indexOf(q) !== -1) &&
+                (!cat || el.getAttribute('data-cat') === cat);
+      el.hidden = !hit;
+      if (hit) { shown++; }
+    });
+
+    years.forEach(function (h) {
+      var y = h.getAttribute('data-pubyear');
+      h.hidden = !items.some(function (el) {
+        return !el.hidden && el.getAttribute('data-year') === y;
+      });
+    });
+
+    empty.hidden = shown !== 0;
+    count.textContent = (shown === total)
+      ? total + ' publications'
+      : shown + ' of ' + total + ' publications';
+  }
+
+  input.addEventListener('input', render);
+  input.addEventListener('search', render);
+
+  chips.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      cat = btn.getAttribute('data-pubchip');
+      chips.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      render();
+    });
+  });
+
+  render();
+})();
+</script>

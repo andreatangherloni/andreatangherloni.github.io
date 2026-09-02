@@ -54,9 +54,11 @@
   object-fit: cover;
 }
 
-/* Global justification for page content */
+/* Body copy is set ragged-right: justify + auto-hyphens produces uneven word
+   spacing ("rivers") in this ~700px column. Restore `justify` here and in the
+   `li` rule below to go back. */
 .page__content {
-  text-align: justify;
+  text-align: left;
 }
 
 /* Keep headings left-aligned for readability */
@@ -69,11 +71,12 @@
   text-align: left;
 }
 
-/* Optional: justify list text too */
 .page__content li {
-  text-align: justify;
+  text-align: left;
 }
 
 .page__content {
-  hyphens: auto;
+  hyphens: none;
 }
+
+@import "custom";

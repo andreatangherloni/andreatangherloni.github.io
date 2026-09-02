@@ -11,3 +11,9 @@ Gemfile.lock
 # Ingore files created by npm
 node_modules
 package-lock.json
+
+# Local Jekyll build (not needed on GitHub Pages)
+vendor/
+.bundle/
+.jekyll-cache/
+.DS_Store

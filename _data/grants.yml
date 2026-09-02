@@ -5,6 +5,7 @@
   subtitle: "FIS Starting Grant · €1.2M"
   icon: "fa-dna"
   description: "Decoding the language of single-cell gene regulation with Transformers."
+  url: "/decode/"
 
 - title: "AIPHO"
   subtitle: "Ricerca Finalizzata (RF2024) · €500k"

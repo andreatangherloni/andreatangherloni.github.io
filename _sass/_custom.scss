@@ -1,0 +1,377 @@
+/* ==========================================================================
+   CUSTOM REFINEMENTS
+   Imported last from assets/css/main.scss so it wins on source order.
+
+   NOTE: `layout: single` wraps content in `.page__content`, `layout: archive`
+   wraps it in `.archive`. Both roots are targeted so typography is consistent
+   across Home/Theses (single) and About/CV/Publications (archive).
+   ========================================================================== */
+
+/* Needed because JS toggles `el.hidden` on filtered publications. */
+[hidden] { display: none !important; }
+
+/* --------------------------------------------------------------------------
+   Typography & vertical rhythm
+   -------------------------------------------------------------------------- */
+.page__content,
+.archive {
+  line-height: 1.7;
+
+  p { margin: 0 0 1.15em; }
+  li { margin-bottom: .35em; }
+
+  h2 {
+    margin: 2.1em 0 .55em;
+    font-size: 1.45em;
+    letter-spacing: -.01em;
+  }
+
+  h3 {
+    margin: 1.7em 0 .45em;
+    font-size: 1.15em;
+  }
+
+  > h1:first-child,
+  > h2:first-child,
+  > h3:first-child { margin-top: 0; }
+
+  /* The theme pairs `h2` with an `<hr>`; a hairline reads better than a rule. */
+  h2 + hr {
+    height: 1px;
+    margin: 0 0 1.1em;
+    border: 0;
+    background: var(--global-border-color);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Publication lists  (_includes/publication-list.html)
+
+   Everything is nested under `.publist` so these rules outrank the
+   `.archive h2` / `.archive h3` descendant selectors above.
+   -------------------------------------------------------------------------- */
+.publist__scholar {
+  margin: 0 0 1.4em;
+  font-size: .9em;
+  color: var(--global-text-color-light);
+}
+
+.publist {
+  margin-top: .5em;
+
+  .publist__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .75em;
+    margin: 0 0 1.1em;
+  }
+
+  .publist__searchwrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1 1 260px;
+
+    i {
+      position: absolute;
+      left: .95em;
+      font-size: .85em;
+      color: var(--global-text-color-light);
+      pointer-events: none;
+    }
+  }
+
+  .publist__search {
+    width: 100%;
+    margin: 0;
+    padding: .6em .9em .6em 2.5em;
+    font-size: .92rem;
+    color: var(--global-text-color);
+    background: var(--global-bg-color);
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--global-link-color);
+      box-shadow: 0 0 0 3px rgba(47, 127, 147, .15);
+    }
+  }
+
+  .publist__count {
+    margin: 0;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--global-text-color-light);
+  }
+
+  .publist__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .45em;
+    margin: 0 0 1.6em;
+  }
+
+  .publist__chip {
+    padding: .38em .85em;
+    font-size: .8rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--global-text-color-light);
+    background: transparent;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    transition: color .18s ease, border-color .18s ease, background .18s ease;
+
+    &:hover {
+      color: var(--global-link-color);
+      border-color: var(--global-link-color);
+    }
+
+    &.is-active {
+      color: #fff;
+      background: var(--global-link-color);
+      border-color: var(--global-link-color);
+    }
+  }
+
+  .publist__year {
+    margin: 2em 0 .85em;
+    padding-bottom: .3em;
+    font-size: 1.05em;
+    font-weight: 800;
+    letter-spacing: .03em;
+    color: var(--global-link-color);
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .publist__empty {
+    color: var(--global-text-color-light);
+    font-style: italic;
+  }
+
+  .pub {
+    padding: 0 0 1.15em;
+
+    + .pub {
+      padding-top: 1.15em;
+      border-top: 1px solid var(--global-border-color);
+    }
+  }
+
+  .pub__title {
+    margin: 0 0 .4em;
+    font-size: 1.02em;
+    font-weight: 700;
+    line-height: 1.4;
+
+    a {
+      color: var(--global-text-color);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--global-link-color);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .pub__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5em;
+    margin: 0 0 .5em;
+  }
+
+  .pub__venue {
+    display: inline-block;
+    padding: .2em .6em;
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+    color: var(--global-link-color);
+    background: rgba(47, 127, 147, .12);
+    border-radius: 4px;
+  }
+
+  .pub__year,
+  .pub__cat {
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--global-text-color-light);
+  }
+
+  .pub__cat::before { content: "\00b7  "; }
+
+  .pub__excerpt {
+    margin: 0 0 .6em;
+    font-size: .9em;
+    line-height: 1.6;
+    color: var(--global-text-color-light);
+    hyphens: none;
+  }
+
+  .pub__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .9em;
+    margin: 0;
+  }
+
+  .pub__link {
+    font-size: .82rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    i { margin-right: .3em; font-size: .85em; }
+    &:hover { text-decoration: underline; }
+  }
+
+  .pub__cite {
+    margin-top: .65em;
+    font-size: .82rem;
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--global-text-color-light);
+
+      &:hover { color: var(--global-link-color); }
+    }
+
+    p {
+      margin: .5em 0 0;
+      padding: .7em .9em;
+      line-height: 1.55;
+      hyphens: none;
+      color: var(--global-code-text-color);
+      background: var(--global-code-background-color);
+      border-radius: 6px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .publist .publist__toolbar { gap: .5em; }
+  .publist .publist__count { font-size: .72rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Funder "logo firma" — site-wide footer (_includes/footer/custom.html)
+
+   MUR's FIS communication guidelines require the logo firma on every detail
+   page, so it lives in the footer rather than on individual pages.
+   -------------------------------------------------------------------------- */
+.footer-funding {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4em;
+  max-width: 900px;
+  margin: 0 auto 1.4em;
+  padding: 0 1em;
+  text-align: left;
+
+  .footer-funding__note {
+    flex: 1 1 300px;
+    margin: 0;
+    font-size: .8rem;
+    line-height: 1.55;
+    color: var(--global-text-color-light);
+    hyphens: none;
+  }
+
+  /* Both marks are dark-on-transparent; a white plate keeps them legible in
+     the dark theme and supplies the required clear space ("area di rispetto",
+     >= 1/8 of the logo base when set beside text). */
+  .footer-funding__logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    padding: .7em 1.1em;
+    background: #fff;
+    border: 1px solid var(--global-border-color);
+    border-radius: 8px;
+  }
+
+  .footer-funding__logo { display: block; width: auto; }
+  .footer-funding__logo--mur { height: 52px; }
+  .footer-funding__logo--fis { height: 32px; }
+}
+
+@media (max-width: 600px) {
+  .footer-funding {
+    justify-content: flex-start;
+    .footer-funding__logos { gap: 1.1em; padding: .6em .9em; }
+    .footer-funding__logo--mur { height: 44px; }
+    .footer-funding__logo--fis { height: 27px; }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Project page (/decode/)
+   -------------------------------------------------------------------------- */
+.project-lead {
+  font-size: 1.08em;
+  line-height: 1.6;
+  color: var(--global-text-color);
+  hyphens: none;
+}
+
+.project-facts {
+  margin: 1.6em 0 2em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 10px;
+  overflow: hidden;
+
+  dl {
+    display: grid;
+    grid-template-columns: minmax(140px, 12em) 1fr;
+    margin: 0;
+  }
+
+  dt, dd {
+    margin: 0;
+    padding: .7em 1.1em;
+    border-top: 1px solid var(--global-border-color);
+    font-size: .9em;
+    line-height: 1.5;
+  }
+
+  dt {
+    font-weight: 700;
+    color: var(--global-text-color-light);
+    background: rgba(47, 127, 147, .05);
+  }
+
+  dd { hyphens: none; }
+
+  dt:first-of-type, dt:first-of-type + dd { border-top: 0; }
+}
+
+@media (max-width: 600px) {
+  .project-facts dl { grid-template-columns: 1fr; }
+  .project-facts dd { border-top: 0; padding-top: 0; }
+  .project-facts dt:first-of-type + dd { border-top: 0; }
+}
+
+.project-note {
+  margin: 2em 0 0;
+  padding: 1em 1.2em;
+  font-size: .88em;
+  line-height: 1.6;
+  hyphens: none;
+  color: var(--global-text-color-light);
+  background: var(--global-code-background-color);
+  color: var(--global-code-text-color);
+  border-left: 3px solid var(--global-link-color);
+  border-radius: 0 6px 6px 0;
+}

@@ -6,13 +6,8 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my publications on my <a href="{{site.author.googlescholar}}">Google Scholar</a> profile.</div>
+  <p class="publist__scholar">You can also find my articles on my
+  <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a> profile.</p>
 {% endif %}
 
-{% include base_path %}
-
-{% for post in site.publications reversed %}
-  {% if post.category == 'books' %}
-    {% include archive-single.html %}
-  {% endif %}
-{% endfor %}
+{% include publication-list.html category="books" %}
