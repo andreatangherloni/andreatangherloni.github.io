@@ -264,109 +264,89 @@
 }
 
 /* --------------------------------------------------------------------------
-   Fixed, always-visible footer
+   Footer + fixed funder bar
 
    The theme shipped a sticky-footer hack: body{padding-bottom:9em} reserving a
    hard-coded 144px, with .page__footer absolutely positioned at the document
-   bottom. That silently breaks the moment the footer is taller than 9em, which
-   is what happened when the funder logos were added — the footer began
-   overlapping the content above it.
+   bottom. That breaks as soon as the footer exceeds 9em, which is what the
+   funder logos did — the footer began overlapping the content above it.
 
-   The footer is now genuinely fixed to the viewport, kept compact, and its
-   height is measured in JS (see _includes/footer/custom.html) to set the body
-   padding, so the two can never drift apart again.
+   Replaced with a real flexbox sticky footer, so the footer sits at the end of
+   the page (pushed to the bottom of the viewport on short pages) and can be
+   any height. The funder acknowledgement lives in a slim bar fixed to the
+   viewport instead, so it is visible on every page without scrolling, while
+   Sitemap / FOLLOW / copyright stay at the end of the page where they belong.
    -------------------------------------------------------------------------- */
-body { padding-bottom: 64px; } /* fallback only; JS sets the exact value */
+html { min-height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 46px;   /* fallback; JS syncs to the real bar height */
+}
+
+#main { flex: 1 0 auto; }
 
 .page__footer {
+  position: static;       /* undo the absolute hack */
+  float: none;
+  flex-shrink: 0;
+  margin-top: 3em;
+}
+
+.funder-bar {
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 20;                 /* same layer as the masthead, opposite edge */
-  float: none;
-  clear: none;
-  margin-top: 0;
-  animation: none;             /* the intro fade is distracting on a fixed bar */
-  box-shadow: 0 -1px 12px rgba(0, 0, 0, .10);
-
-  footer {
-    position: relative;        /* positioning context for the logo plate */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 62px;          /* the logo plate is out of flow and cannot
-                                  prop the footer open, so reserve for it */
-    margin-top: 0;
-    padding: .5em 1em;
-    padding-right: 200px;      /* keep text clear of the logos */
-  }
-
-  /* One compact meta row: Sitemap · FOLLOW · copyright */
-  .footer-meta__link,
-  .page__footer-follow,
-  .page__footer-copyright {
-    display: inline;
-    font-size: .68rem;
-    line-height: 1.4;
-  }
-
-  .page__footer-follow {
-    ul, li { display: inline; padding: 0; margin: 0; }
-    li + li { margin-left: .55em; }
-    &::before { content: "\00b7"; margin: 0 .5em; opacity: .6; }
-  }
-
-  .page__footer-copyright {
-    font-size: .66rem;
-    &::before { content: "\00b7"; margin: 0 .5em; opacity: .6; }
-  }
+  z-index: 20;            /* same layer as the masthead, opposite edge */
+  background: var(--global-bg-color);
+  border-top: 1px solid var(--global-border-color);
+  box-shadow: 0 -1px 12px rgba(0, 0, 0, .08);
 }
 
-.footer-funding {
-  display: block;
-  margin: 0 0 .1em;
-
-  .footer-funding__note {
-    margin: 0;
-    font-size: .72rem;
-    line-height: 1.4;
-    color: var(--global-text-color-light);
-    hyphens: none;
-  }
-
-  /* Pulled out of flow and centred against the whole footer, so it lines up
-     with the funding sentence and the Sitemap/FOLLOW/copyright row together
-     rather than sitting in a band of its own. Both marks are
-     dark-on-transparent, so the white plate keeps them legible in dark mode
-     and supplies the required clear space. */
-  .footer-funding__logos {
-    position: absolute;
-    top: 50%;
-    right: 1em;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    padding: .35em .65em;
-    background: #fff;
-    border: 1px solid var(--global-border-color);
-    border-radius: 6px;
-  }
-
-  .footer-funding__logo { display: block; width: auto; }
-  .footer-funding__logo--mur { height: 32px; }
-  .footer-funding__logo--fis { height: 20px; }
+.funder-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2em;
+  min-height: 46px;       /* the logo plate must always fit */
+  max-width: $x-large;
+  margin: 0 auto;
+  padding: .35em 1em;
 }
 
-@media (max-width: 800px) {
-  .page__footer footer { padding-right: 150px; min-height: 56px; }
-  .page__footer .page__footer-copyright { display: none; }
-  .footer-funding {
-    .footer-funding__note { font-size: .68rem; }
-    .footer-funding__logo--mur { height: 28px; }
-    .footer-funding__logo--fis { height: 17px; }
-  }
+.funder-bar__note {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: .74rem;
+  line-height: 1.4;
+  color: var(--global-text-color-light);
+  hyphens: none;
+}
+
+/* Both marks are dark-on-transparent: the white plate keeps them legible in
+   the dark theme and supplies the required clear space. */
+.funder-bar__logos {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: .3em .6em;
+  background: #fff;
+  border: 1px solid var(--global-border-color);
+  border-radius: 6px;
+}
+
+.funder-bar__logo { display: block; width: auto; }
+.funder-bar__logo--mur { height: 28px; }
+.funder-bar__logo--fis { height: 17px; }
+
+@media (max-width: 700px) {
+  .funder-bar__note { font-size: .66rem; }
+  .funder-bar__logo--mur { height: 24px; }
+  .funder-bar__logo--fis { height: 15px; }
 }
 
 /* --------------------------------------------------------------------------

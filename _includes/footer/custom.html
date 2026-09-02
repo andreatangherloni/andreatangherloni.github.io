@@ -1,35 +1,4 @@
 <!-- start custom footer snippets -->
 {% include base_path %}
-
-<div class="footer-funding">
-  <p class="footer-funding__note">
-    <a href="{{ base_path }}/decode/"><strong>DECODE</strong></a> is funded by the Italian Ministry
-    of University and Research (MUR) through the <em>Fondo Italiano per la Scienza</em> (FIS).
-  </p>
-  <div class="footer-funding__logos">
-    <img class="footer-funding__logo footer-funding__logo--mur"
-         src="{{ base_path }}/images/logo-mur.svg"
-         alt="Ministero dell&rsquo;Universit&agrave; e della Ricerca" loading="lazy">
-    <img class="footer-funding__logo footer-funding__logo--fis"
-         src="{{ base_path }}/images/logo-fis.png"
-         alt="Fondo Italiano per la Scienza" width="134" height="71" loading="lazy">
-  </div>
-</div>
-
-<a class="footer-meta__link" href="{{ base_path }}/sitemap/">Sitemap</a>
-
-<script>
-/* The footer is fixed, so the body needs bottom padding equal to its height.
-   Measured rather than hard-coded: the previous 9em guess is exactly what
-   broke when the footer grew taller than the reserved space. */
-(function () {
-  var f = document.querySelector('.page__footer');
-  if (!f) { return; }
-  function sync() { document.body.style.paddingBottom = f.offsetHeight + 'px'; }
-  sync();
-  window.addEventListener('resize', sync);
-  window.addEventListener('load', sync);
-  if (window.ResizeObserver) { new ResizeObserver(sync).observe(f); }
-})();
-</script>
+<a href="{{ base_path }}/sitemap/">Sitemap</a>
 <!-- end custom footer snippets -->
