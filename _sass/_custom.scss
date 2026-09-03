@@ -264,22 +264,27 @@
 }
 
 /* --------------------------------------------------------------------------
-   Slim fixed funder bar
+   Fixed funder bar
 
-   ~46px, pinned to the viewport, visible on every page without scrolling.
-   Sitemap / Follow / copyright live in the sidebar instead (below), so the
-   page footer is only rendered on the few pages that have no sidebar.
+   Carries the Sitemap and copyright on the left, then a vertical rule, the
+   funding acknowledgement, and the MUR/FIS logo plate. Pinned to the viewport
+   so it is visible on every page without scrolling. The page footer is no
+   longer rendered at all - this bar replaces it.
    -------------------------------------------------------------------------- */
-/* Matches the bar height so there is no jump before the JS measure runs;
-   the theme's own 9em reserve was for a footer that no longer renders here. */
-body { padding-bottom: 46px; }
+body { padding-bottom: 56px; }   /* fallback; JS syncs the measured height */
+
+.sidebar {
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 68px;        /* keep the last profile link clear of the bar */
+  }
+}
 
 .funder-bar {
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 20;            /* same layer as the masthead, opposite edge */
+  z-index: 20;                   /* same layer as the masthead, opposite edge */
   background: var(--global-bg-color);
   border-top: 1px solid var(--global-border-color);
   box-shadow: 0 -1px 12px rgba(0, 0, 0, .08);
@@ -288,12 +293,41 @@ body { padding-bottom: 46px; }
 .funder-bar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.2em;
-  min-height: 46px;       /* the logo plate must always fit */
+  gap: 1.1em;
+  min-height: 56px;              /* fits 3 meta lines and the logo plate */
   max-width: $x-large;
   margin: 0 auto;
-  padding: .35em 1em;
+  padding: .4em 1em;
+}
+
+/* Sitemap + copyright, sized so they land on exactly three lines at 300px. */
+.funder-bar__meta {
+  flex: 0 0 320px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 1.1em;
+  border-right: 1px solid var(--global-border-color);   /* the vertical rule */
+  font-size: .56rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+}
+
+.funder-bar__sitemap {
+  display: block;
+  margin-bottom: .15em;
+  font-size: inherit;
+  text-decoration: none;
+
+  &:hover, &:focus { text-decoration: underline; }
+}
+
+.funder-bar__copyright {
+  display: block;
+
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
 }
 
 .funder-bar__note {
@@ -322,67 +356,15 @@ body { padding-bottom: 46px; }
 .funder-bar__logo--mur { height: 28px; }
 .funder-bar__logo--fis { height: 17px; }
 
+/* Too narrow for three columns: drop the meta rather than grow the bar. */
+@media (max-width: 900px) {
+  .funder-bar__meta { display: none; }
+}
+
 @media (max-width: 700px) {
   .funder-bar__note { font-size: .66rem; }
   .funder-bar__logo--mur { height: 24px; }
   .funder-bar__logo--fis { height: 15px; }
-}
-
-/* --------------------------------------------------------------------------
-   Sitemap / Follow / copyright, moved into the left sidebar
-
-   Keeping them in the footer made it ~215px tall, which collided with the
-   theme's position:fixed 100vh sidebar and left a large reserved gap under the
-   content. In the sidebar they sit below the profile links and are pushed to
-   the bottom of the column, just above the funder row in the footer.
-   -------------------------------------------------------------------------- */
-.sidebar {
-  @media screen and (min-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 58px;                /* clear the fixed funder bar */
-
-    .footer-meta { margin-top: auto; }   /* settle at the bottom of the column */
-  }
-}
-
-/* Own classes, so none of the theme's full-width footer styling applies. */
-.footer-meta {
-  padding-top: .8em;
-  margin-top: 1.2em;
-  border-top: 1px solid var(--global-border-color);
-  font-size: .68rem;
-  line-height: 1.55;
-  color: var(--global-text-color-light);
-  text-align: left;
-
-  .footer-meta__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .15em .9em;
-    margin: 0 0 .5em;
-    font-size: inherit;
-    line-height: inherit;
-  }
-
-  .footer-meta__link {
-    font-size: inherit;
-    font-weight: 400;
-    text-transform: none;
-    text-decoration: none;
-
-    &:hover, &:focus { text-decoration: underline; }
-  }
-
-  .footer-meta__copyright {
-    margin: 0;
-    font-size: .62rem;
-    line-height: 1.5;
-    opacity: .85;
-
-    a { color: inherit; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  }
 }
 
 /* --------------------------------------------------------------------------
