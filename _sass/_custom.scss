@@ -264,76 +264,68 @@
 }
 
 /* --------------------------------------------------------------------------
-   Footer
+   Slim fixed funder bar
 
-   The theme positions .page__footer absolutely at the document bottom and
-   reserves room for it with a hard-coded body{padding-bottom:9em}. That is
-   left as-is (it is what the layout is built around), but the reserve is now
-   measured from the real footer in JS - see _includes/footer/custom.html -
-   because the hard-coded 9em is exactly what broke once the funder logos made
-   the footer taller than 144px.
-
-   Note: at >=1024px the theme makes .sidebar position:fixed with height:100vh,
-   so it is out of flow and spans the viewport's left column at every scroll
-   position. A full-width footer therefore always meets it at the page bottom.
-   That is pre-existing theme behaviour, not something introduced here.
+   ~46px, pinned to the viewport, visible on every page without scrolling.
+   Sitemap / Follow / copyright live in the sidebar instead (below), so the
+   page footer is only rendered on the few pages that have no sidebar.
    -------------------------------------------------------------------------- */
+/* Matches the bar height so there is no jump before the JS measure runs;
+   the theme's own 9em reserve was for a footer that no longer renders here. */
+body { padding-bottom: 46px; }
 
-/* --------------------------------------------------------------------------
-   Funder "logo firma" — site-wide footer (_includes/footer/custom.html)
-
-   MUR's FIS communication guidelines require the logo firma on every detail
-   page, so it lives in the footer rather than on individual pages.
-   -------------------------------------------------------------------------- */
-.footer-funding {
-  /* No max-width or auto margins: the theme's own <footer> already centres and
-     pads the content (max-width $x-large, 1em side padding). Capping this
-     narrower made the block sit inset and centred while Sitemap and the
-     copyright below it are flush left, and squeezed the sentence onto two
-     lines. Span the full footer width and push the logos to the far right. */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.4em;
-  margin: 0;
-  text-align: left;
-
-  .footer-funding__note {
-    flex: 1 1 340px;
-    margin: 0;
-    font-size: .8rem;
-    line-height: 1.55;
-    color: var(--global-text-color-light);
-    hyphens: none;
-  }
-
-  /* Both marks are dark-on-transparent; a white plate keeps them legible in
-     the dark theme and supplies the required clear space ("area di rispetto",
-     >= 1/8 of the logo base when set beside text). */
-  .footer-funding__logos {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 1.5em;
-    padding: .7em 1.1em;
-    background: #fff;
-    border: 1px solid var(--global-border-color);
-    border-radius: 8px;
-  }
-
-  .footer-funding__logo { display: block; width: auto; }
-  .footer-funding__logo--mur { height: 52px; }
-  .footer-funding__logo--fis { height: 32px; }
+.funder-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;            /* same layer as the masthead, opposite edge */
+  background: var(--global-bg-color);
+  border-top: 1px solid var(--global-border-color);
+  box-shadow: 0 -1px 12px rgba(0, 0, 0, .08);
 }
 
+.funder-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2em;
+  min-height: 46px;       /* the logo plate must always fit */
+  max-width: $x-large;
+  margin: 0 auto;
+  padding: .35em 1em;
+}
+
+.funder-bar__note {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: .74rem;
+  line-height: 1.4;
+  color: var(--global-text-color-light);
+  hyphens: none;
+}
+
+/* Both marks are dark-on-transparent: the white plate keeps them legible in
+   the dark theme and supplies the required clear space. */
+.funder-bar__logos {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: .3em .6em;
+  background: #fff;
+  border: 1px solid var(--global-border-color);
+  border-radius: 6px;
+}
+
+.funder-bar__logo { display: block; width: auto; }
+.funder-bar__logo--mur { height: 28px; }
+.funder-bar__logo--fis { height: 17px; }
+
 @media (max-width: 700px) {
-  .footer-funding {
-    justify-content: flex-start;
-    .footer-funding__logos { gap: 1.1em; padding: .6em .9em; }
-    .footer-funding__logo--mur { height: 44px; }
-    .footer-funding__logo--fis { height: 27px; }
-  }
+  .funder-bar__note { font-size: .66rem; }
+  .funder-bar__logo--mur { height: 24px; }
+  .funder-bar__logo--fis { height: 15px; }
 }
 
 /* --------------------------------------------------------------------------
@@ -348,33 +340,50 @@
   @media screen and (min-width: 1024px) {
     display: flex;
     flex-direction: column;
+    padding-bottom: 58px;                /* clear the fixed funder bar */
 
     .footer-meta { margin-top: auto; }   /* settle at the bottom of the column */
   }
 
   .footer-meta {
-    padding-top: 1em;
+    padding-top: .8em;
     margin-top: 1.2em;
     border-top: 1px solid var(--global-border-color);
+    font-size: .62rem;                   /* everything below inherits this */
+    line-height: 1.5;
     color: var(--global-text-color-light);
+    text-align: left;
   }
 
-  .footer-meta__sitemap {
+  /* Flush left, one item per line, no inline-block wrapping or stray indents */
+  .footer-meta__sitemap,
+  .footer-meta .page__footer-follow,
+  .footer-meta .page__footer-copyright {
     display: block;
-    margin-bottom: .35em;
-    font-size: .7rem;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: left;
   }
 
-  .page__footer-follow {
+  .footer-meta .page__footer-follow {
+    margin: .45em 0;
+
     ul { margin: 0; padding: 0; list-style: none; }
-    li { display: inline-block; padding: 0 .5em .2em 0; font-size: .68rem; }
+
+    li {
+      display: block;
+      margin: 0 0 .15em;
+      padding: 0;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    i { width: 1.1em; margin-right: .2em; text-align: center; }
   }
 
-  .page__footer-copyright {
-    margin-top: .4em;
-    font-size: .62rem;
-    line-height: 1.45;
-  }
+  .footer-meta .page__footer-copyright { opacity: .85; }
 }
 
 /* --------------------------------------------------------------------------

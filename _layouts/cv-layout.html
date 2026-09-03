@@ -26,12 +26,15 @@ layout: compress
       </div>
     </div>
 
+    {% unless page.author_profile or layout.author_profile or page.sidebar %}
     <div class="page__footer">
       <footer>
-        {% include footer/custom.html %}
         {% include footer.html %}
       </footer>
     </div>
+    {% endunless %}
+
+    {% include funder-bar.html %}
 
     {% include scripts.html %}
 
