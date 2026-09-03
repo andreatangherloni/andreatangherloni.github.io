@@ -344,46 +344,45 @@ body { padding-bottom: 46px; }
 
     .footer-meta { margin-top: auto; }   /* settle at the bottom of the column */
   }
+}
 
-  .footer-meta {
-    padding-top: .8em;
-    margin-top: 1.2em;
-    border-top: 1px solid var(--global-border-color);
-    font-size: .62rem;                   /* everything below inherits this */
-    line-height: 1.5;
-    color: var(--global-text-color-light);
-    text-align: left;
-  }
+/* Own classes, so none of the theme's full-width footer styling applies. */
+.footer-meta {
+  padding-top: .8em;
+  margin-top: 1.2em;
+  border-top: 1px solid var(--global-border-color);
+  font-size: .68rem;
+  line-height: 1.55;
+  color: var(--global-text-color-light);
+  text-align: left;
 
-  /* Flush left, one item per line, no inline-block wrapping or stray indents */
-  .footer-meta__sitemap,
-  .footer-meta .page__footer-follow,
-  .footer-meta .page__footer-copyright {
-    display: block;
-    margin: 0;
-    padding: 0;
+  .footer-meta__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .15em .9em;
+    margin: 0 0 .5em;
     font-size: inherit;
     line-height: inherit;
-    text-align: left;
   }
 
-  .footer-meta .page__footer-follow {
-    margin: .45em 0;
+  .footer-meta__link {
+    font-size: inherit;
+    font-weight: 400;
+    text-transform: none;
+    text-decoration: none;
 
-    ul { margin: 0; padding: 0; list-style: none; }
-
-    li {
-      display: block;
-      margin: 0 0 .15em;
-      padding: 0;
-      font-size: inherit;
-      line-height: inherit;
-    }
-
-    i { width: 1.1em; margin-right: .2em; text-align: center; }
+    &:hover, &:focus { text-decoration: underline; }
   }
 
-  .footer-meta .page__footer-copyright { opacity: .85; }
+  .footer-meta__copyright {
+    margin: 0;
+    font-size: .62rem;
+    line-height: 1.5;
+    opacity: .85;
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  }
 }
 
 /* --------------------------------------------------------------------------

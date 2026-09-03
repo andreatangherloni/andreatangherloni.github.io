@@ -1,36 +1,30 @@
 {% include base_path %}
 
 {% comment %}
-  Sitemap / Follow / copyright. Rendered inside the left sidebar when the page
-  has an author profile, and falls back into the page footer on the few pages
-  that have no sidebar (404, terms, cv-json, ...), so the copyright is never
-  dropped entirely.
+  Sitemap / GitHub / Feed / copyright, rendered in the left sidebar (and in the
+  page footer as a fallback on pages that have no sidebar).
+
+  Deliberately uses its own classes rather than the theme's .page__footer-*
+  ones: those are written for a full-width footer and force uppercase, bold
+  anchors and an inline-block li+li spacer, which read as broken at sidebar
+  width.
 {% endcomment %}
 
 <div class="footer-meta">
-  <a class="footer-meta__sitemap" href="{{ base_path }}/sitemap/">Sitemap</a>
+  <p class="footer-meta__links">
+    <a class="footer-meta__link" href="{{ base_path }}/sitemap/">Sitemap</a>
+    {% if site.author.github %}
+      <a class="footer-meta__link" href="https://github.com/{{ site.author.github }}">GitHub</a>
+    {% endif %}
+    {% if site.atom_feed.hide != true %}
+      <a class="footer-meta__link" href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}">Feed</a>
+    {% endif %}
+  </p>
 
-  {% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
-  <div class="page__footer-follow">
-    <ul class="social-icons">
-      {% if site.data.ui-text[site.locale].follow_label %}
-        <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-      {% endif %}
-      {% if site.author.github %}
-        <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-      {% endif %}
-      {% if site.author.bitbucket %}
-        <li><a href="https://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
-      {% endif %}
-      {% if site.atom_feed.hide != true %}
-        <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-      {% endif %}
-    </ul>
-  </div>
-  {% endif %}
-
-  <div class="page__footer-copyright">
-    &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>.<br />
+  <p class="footer-meta__copyright">
+    &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}<br>
+    Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
+    <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a><br>
     Site last updated {{ "now" | date: '%Y-%m-%d' }}
-  </div>
+  </p>
 </div>
