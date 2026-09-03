@@ -296,7 +296,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.4em;
-  margin: 0 0 1.4em;
+  margin: 0;
   text-align: left;
 
   .footer-funding__note {
@@ -333,6 +333,47 @@
     .footer-funding__logos { gap: 1.1em; padding: .6em .9em; }
     .footer-funding__logo--mur { height: 44px; }
     .footer-funding__logo--fis { height: 27px; }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Sitemap / Follow / copyright, moved into the left sidebar
+
+   Keeping them in the footer made it ~215px tall, which collided with the
+   theme's position:fixed 100vh sidebar and left a large reserved gap under the
+   content. In the sidebar they sit below the profile links and are pushed to
+   the bottom of the column, just above the funder row in the footer.
+   -------------------------------------------------------------------------- */
+.sidebar {
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+
+    .footer-meta { margin-top: auto; }   /* settle at the bottom of the column */
+  }
+
+  .footer-meta {
+    padding-top: 1em;
+    margin-top: 1.2em;
+    border-top: 1px solid var(--global-border-color);
+    color: var(--global-text-color-light);
+  }
+
+  .footer-meta__sitemap {
+    display: block;
+    margin-bottom: .35em;
+    font-size: .7rem;
+  }
+
+  .page__footer-follow {
+    ul { margin: 0; padding: 0; list-style: none; }
+    li { display: inline-block; padding: 0 .5em .2em 0; font-size: .68rem; }
+  }
+
+  .page__footer-copyright {
+    margin-top: .4em;
+    font-size: .62rem;
+    line-height: 1.45;
   }
 }
 

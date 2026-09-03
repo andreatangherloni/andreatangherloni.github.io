@@ -16,13 +16,11 @@
   </div>
 </div>
 
-<a href="{{ base_path }}/sitemap/">Sitemap</a>
-
 <script>
-/* The theme reserves space for its absolutely-positioned footer with a
-   hard-coded body{padding-bottom:9em}. That silently breaks whenever the
-   footer is taller than 9em - which is what the funder logos did. Measure the
-   footer instead, so the reserve and the real height cannot drift apart. */
+/* The theme reserves room for its absolutely-positioned footer with a
+   hard-coded body{padding-bottom:9em}. That breaks whenever the footer is
+   taller than 9em - which is what the funder logos did. Measure it instead so
+   the reserve and the real height cannot drift apart. */
 (function () {
   var f = document.querySelector('.page__footer');
   if (!f) { return; }
