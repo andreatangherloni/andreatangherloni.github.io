@@ -1,30 +1,29 @@
 {% include base_path %}
 
 {% comment %}
-  Sitemap / GitHub / Feed / copyright, rendered in the left sidebar (and in the
-  page footer as a fallback on pages that have no sidebar).
+  Sitemap + copyright. Rendered in the left sidebar, and in the page footer as
+  a fallback on pages with no sidebar.
 
-  Deliberately uses its own classes rather than the theme's .page__footer-*
-  ones: those are written for a full-width footer and force uppercase, bold
-  anchors and an inline-block li+li spacer, which read as broken at sidebar
-  width.
+  No GitHub link: author-profile.html already renders one from the same
+  site.author.github value, a couple of rows above in this same sidebar.
+  No Feed link: the feed is already advertised to readers via the
+  <link rel="alternate" type="application/atom+xml"> tag in <head>.
+
+  Own classes, not the theme's .page__footer-* ones, which are written for a
+  full-width footer (uppercase, bold anchors, li+li spacers).
 {% endcomment %}
 
 <div class="footer-meta">
   <p class="footer-meta__links">
     <a class="footer-meta__link" href="{{ base_path }}/sitemap/">Sitemap</a>
-    {% if site.author.github %}
-      <a class="footer-meta__link" href="https://github.com/{{ site.author.github }}">GitHub</a>
-    {% endif %}
-    {% if site.atom_feed.hide != true %}
-      <a class="footer-meta__link" href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}">Feed</a>
-    {% endif %}
   </p>
 
   <p class="footer-meta__copyright">
-    &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}<br>
-    Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
-    <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a><br>
+    &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }},
+    {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }}
+    <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
+    <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>,
+    a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br>
     Site last updated {{ "now" | date: '%Y-%m-%d' }}
   </p>
 </div>
